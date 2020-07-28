@@ -1,5 +1,10 @@
 @import "range";
 
+.video-container:hover .video-navigation {
+  display: flex;
+}
+
+
 .video {
   display: flex;
   flex-direction: column;
@@ -14,7 +19,7 @@
 
   &-container {
     position: relative;
-    border: 1px solid rgba(#0F1E36, .2);
+    border: 1px solid rgba(#0f1e36, 0.2);
     border-bottom: none;
     max-width: 800px;
     margin: 0 auto;
@@ -31,24 +36,21 @@
 
     @media (max-width: 650px) {
       height: 168px;
-
     }
   }
 
   &-navigation {
     position: absolute;
-    bottom: -44px;
-    border-left: 1px solid rgba(#0F1E36, .2);
-    border-right: 1px solid rgba(#0F1E36, .2);
+    bottom: 0;
+    border-left: 1px solid rgba(#0f1e36, 0.2);
+    border-right: 1px solid rgba(#0f1e36, 0.2);
     left: 0;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    background-color: #0F1E36;
+    background: rgba(58, 93, 139, 0.5);
     color: #fff;
-
-
   }
 
   &-button {
@@ -57,6 +59,10 @@
     border: 0;
     outline: 0;
     margin: 15px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: rgba(58, 93, 139,1);
+    }
   }
 
   &-time {
