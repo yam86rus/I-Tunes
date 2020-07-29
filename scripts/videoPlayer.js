@@ -8,6 +8,8 @@ export const videoPlayerInit = () => {
     const videoTimePassed = document.querySelector('.video-time__passed');
     const videoProgress = document.querySelector('.video-progress');
     const videoTimeTotal = document.querySelector('.video-time__total');
+    const videoFullscreen = document.querySelector('.video-fullscreen');
+    const videoVolume = document.querySelector('.video-volume');
 
     //  смена иконок "Play" / "Pause"
 
@@ -62,9 +64,7 @@ export const videoPlayerInit = () => {
         let minuteTotal = Math.floor(duration / 60);
         let secondsTotal = Math.floor(duration % 60);
 
-        // videoTimePassed.textContent = addZero(minutePassed) + ':' + addZero(secondsPassed);
         videoTimePassed.textContent = `${addZero(minutePassed)}:${addZero(secondsPassed)}`;
-        // videoTimeTotal.textContent = addZero(minuteTotal) + ':' + addZero(secondsTotal);
         videoTimeTotal.textContent = `${addZero(minuteTotal)}:${addZero(secondsTotal)}`;
     });
 
@@ -75,6 +75,17 @@ export const videoPlayerInit = () => {
         videoPlayer.currentTime = (value * duration) / 100;
     });
 
+    // развернуть на веь экран
+    videoFullscreen.addEventListener('click', () => {
+        videoPlayer.requestFullscreen();
+    });
 
+    // громкость
+    videoVolume.addEventListener('input', () => {
+        videoPlayer.volume = videoVolume.value / 100;
+    });
+
+    videoPlayer.volume = 0.2;
+    videoVolume.value = videoPlayer.volume * 100;
 
 };
