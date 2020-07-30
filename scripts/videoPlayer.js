@@ -1,3 +1,5 @@
+import { addZero } from './supScripts.js';
+
 export const videoPlayerInit = () => {
 
     // получение элементов
@@ -38,9 +40,6 @@ export const videoPlayerInit = () => {
         videoPlayer.pause();
         videoPlayer.currentTime = 0;
     };
-
-    // Добавление '0' в отображение таймера
-    const addZero = n => n < 10 ? '0' + n : n;
 
     // События элементов
 
