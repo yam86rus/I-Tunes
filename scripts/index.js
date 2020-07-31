@@ -16,6 +16,10 @@ const deactivationPlayer = () => {
     temp.style.display = 'none';
     playerBtn.forEach(item => item.classList.remove('active'));
     playerBlock.forEach(item => item.classList.remove('active'));
+
+    musicPlayerInit.stop(); // остановки музыкального плеера. Вызываем метод stop у функции musicPlayerInit 
+    videoPlayerInit.stop(); // остановки видео плеера. Вызываем метод stop у функции videoPlayerInit
+    radioPlayerInit.stop(); //  остановки радио плеера. Вызываем метод stop у функции radioPlayerInit
 };
 
 playerBtn.forEach((btn, i) => btn.addEventListener('click', () => {
